@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkinGuard AI - HealthCare</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #ffffff); /* HealthCare Colors */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        body>img {
+            margin-top: 70px;
+            font-size: 3em;
+            color: #00796B; /* Dark greenish blue */
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-between;
+            background: #ffffff;
+            margin-top: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .left-side {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .right-side {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            font-size: 1em;
+            color: #264448;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #264448;
+            margin-bottom: 30px;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            background-color: #266B71;
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #264448;
+        }
+
+    </style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='img.png') }}" alt="SkinGuard AI Logo" style="width: 250px; height: auto; ">
+
+    <div class="content">
+        <div class="left-side">
+            <img src="{{ url_for('static', filename=condition_info['asset']) }}" alt="SkinGuard AI Logo" style="width: auto; height: {{ condition_info['height'] }}px; padding-right: 2em;">
+        </div>
+        <div class="right-side">
+            <div class="predicted-class">
+                You probably have {{ condition_info['problem_description'] }}
+            </div>
+            <br>
+            <div class="recommendation">
+                Recommendation: {{ condition_info['recommendation'] }}
+            </div>
+            {% if condition_info['url'] %}
+                <div class="button-container">
+                    <button ><a href="{{ condition_info['url'] }}" target="_blank" style="text-decoration: none; color: inherit;">Get product on amazon</a></button>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+</body>
+</html>
