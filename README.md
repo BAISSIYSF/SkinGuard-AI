@@ -4,12 +4,12 @@
 
 The application leverages computer vision to detect different types of skin conditions, including but not limited to:
 
-- **Actinic Keratosis**
-- **Seborrheic Keratosis**
-- **Basal Cell Carcinoma**
-- **Nevus (Mole)**
-- **Pigmented Benign Keratosis**
-- **Vascular Lesion**
+- **Actinic Keratosis (76.08% mAP50)**
+- **Seborrheic Keratosis (99.50% mAP50)**
+- **Basal Cell Carcinoma (94.25% mAP50)**
+- **Nevus (Mole) (99.50% mAP50)**
+- **Pigmented Benign Keratosis (85.41% mAP50)**
+- **Vascular Lesion (99.50% mAP50)**
 
 ## Features
 
