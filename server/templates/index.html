@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SkinGuard AI - HealthCare</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #e0f7fa, #ffffff); /* HealthCare Colors */
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        img {
+            margin-top: 70px;
+            font-size: 3em;
+            color: #00796B; /* Dark greenish blue */
+            text-align: center;
+            animation: slideDown 1s ease-out;
+        }
+
+        .content {
+            background: #ffffff;
+            margin-top: 30px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        .description {
+            font-size: 1.2em;
+            color: #264448;
+            margin-bottom: 30px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input[type="file"] {
+            margin: 20px 0;
+            width: 100%;
+            font-size: 1em;
+            padding: 12px;
+            border: 2px dashed #80deea;
+            border-radius: 12px;
+            background-color: #f1f8f9;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        input[type="file"]:hover {
+            border-color: #26c6da;
+        }
+
+        .file-name {
+            margin-top: 10px;
+            font-size: 1em;
+            color: #333;
+            min-height: 24px;
+        }
+
+        button {
+            background-color: #266B71;
+            color: white;
+            padding: 14px 30px;
+            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #264448;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: #d32f2f;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        @keyframes slideDown {
+            from {transform: translateY(-50px); opacity: 0;}
+            to {transform: translateY(0); opacity: 1;}
+        }
+    </style>
+</head>
+<body>
+
+    <img src="{{ url_for('static', filename='img.png') }}" alt="SkinGuard AI Logo" style="width: 250px; height: auto; ">
+
+
+    <div class="content">
+        <div class="description">
+            Our mission is to help you monitor your skin health using artificial intelligence before needing to visit a doctor
+        </div>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" id="fileInput" onchange="showFileName()" required>
+            <div class="file-name" id="fileName"></div>
+            <button type="submit">Upload</button>
+        </form>
+
+        {% if message %}
+            <div class="message">{{ message }}</div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
