@@ -56,7 +56,7 @@
         .description {
             font-size: 1.2em;
             color: #264448;
-            margin-bottom: 30px;
+            /* margin-bottom: 30px; */
         }
 
         .button-container {
@@ -89,21 +89,31 @@
     <div class="content">
         <div class="left-side">
             <img src="{{ url_for('static', filename=condition_info['asset']) }}" alt="SkinGuard AI Logo" style="width: auto; height: {{ condition_info['height'] }}px; padding-right: 2em;">
+
         </div>
         <div class="right-side">
             <div class="predicted-class">
-                You probably have {{ condition_info['problem_description'] }}
+                <strong>You probably have:</strong><br>
+                <em>{{ condition_info['short_description'] }}</em>
+            </div>
+            <br>
+            <div class="description">
+                <strong>Details:</strong> {{ condition_info['detailed_description'] }}
             </div>
             <br>
             <div class="recommendation">
-                Recommendation: {{ condition_info['recommendation'] }}
+                <strong>Recommendation:</strong> {{ condition_info['recommendation'] }}
             </div>
             {% if condition_info['url'] %}
                 <div class="button-container">
-                    <button ><a href="{{ condition_info['url'] }}" target="_blank" style="text-decoration: none; color: inherit;">Get product on amazon</a></button>
+                    <button>
+                        <a href="{{ condition_info['url'] }}" target="_blank" style="text-decoration: none; color: inherit;">
+                            Get product on Amazon
+                        </a>
+                    </button>
                 </div>
             {% endif %}
-        </div>
+        </div>        
     </div>
 
 </body>

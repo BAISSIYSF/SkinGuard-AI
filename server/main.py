@@ -19,9 +19,11 @@ def allowed_file(filename):
 model = YOLO('skin_cancer_model.pt')  # Make sure to place the model file correctly
 
 # Skin conditions dictionary
+
 skin_conditions = {
     "actinic keratosis": {
-        "problem_description": "Actinic keratosis causes rough, scaly patches from sun damage, which can turn into skin cancer.",
+        "short_description": "Rough, scaly patches from sun damage.",
+        "detailed_description": "Actinic keratosis causes rough, scaly patches from sun damage, which can turn into skin cancer.",
         "can_be_solved_with_product": "no",
         "url": "",
         "asset": "img.png",
@@ -29,7 +31,8 @@ skin_conditions = {
         "recommendation": "This condition requires medical attention. Sunscreen may help prevent further damage, but treatment like cryotherapy or topical chemotherapy should be done by a doctor."
     },
     "seborrheic keratosis": {
-        "problem_description": "Seborrheic keratosis forms harmless but unsightly wart-like growths on the skin.",
+        "short_description": "Wart-like, harmless skin growths.",
+        "detailed_description": "Seborrheic keratosis forms harmless but unsightly wart-like growths on the skin.",
         "can_be_solved_with_product": "yes",
         "url": "https://www.amazon.com.au/SkinPro-EXTREME-Skin-Remover-Corrector/dp/B075QZ2NCV",
         "asset": "1.png",
@@ -37,7 +40,8 @@ skin_conditions = {
         "recommendation": "SkinPro EXTREME Skin Tag Remover offers an at-home solution for safely removing benign skin lesions. Consult a dermatologist if unsure about treatment."
     },
     "basal cell carcinoma": {
-        "problem_description": "Basal cell carcinoma is the most common type of skin cancer, caused by sun exposure.",
+        "short_description": "The most common form of skin cancer.",
+        "detailed_description": "Basal cell carcinoma is the most common type of skin cancer, caused by sun exposure.",
         "can_be_solved_with_product": "no",
         "url": "",
         "asset": "img.png",
@@ -45,7 +49,8 @@ skin_conditions = {
         "recommendation": "This condition requires medical treatment such as surgical excision or topical therapies prescribed by a doctor. Sunscreen can help prevent further damage."
     },
     "nevus": {
-        "problem_description": "A nevus (mole) is usually benign but may develop into melanoma if it changes over time.",
+        "short_description": "Common mole that may change over time.",
+        "detailed_description": "A nevus (mole) is usually benign but may develop into melanoma if it changes over time.",
         "can_be_solved_with_product": "no",
         "url": "",
         "asset": "img.png",
@@ -53,7 +58,8 @@ skin_conditions = {
         "recommendation": "Monitor moles with regular skin checks. If you notice any changes in a mole, consult a dermatologist for removal and biopsy."
     },
     "pigmented benign keratosis": {
-        "problem_description": "Pigmented benign keratosis causes dark spots that may resemble melanoma.",
+        "short_description": "Dark spots that can mimic melanoma.",
+        "detailed_description": "Pigmented benign keratosis causes dark spots that may resemble melanoma.",
         "can_be_solved_with_product": "yes",
         "url": "https://www.amazon.com/Murad-Environmental-Shield-Rapid-Correcting/dp/B08KR79NBR",
         "asset": "4.png",
@@ -61,7 +67,8 @@ skin_conditions = {
         "recommendation": "Murad Rapid Age Spot and Pigment Lightening Serum helps reduce pigmentation, improving skin tone. It's ideal for cosmetic treatment of dark spots."
     },
     "vascular lesion": {
-        "problem_description": "Vascular lesions are red or purple marks caused by abnormal blood vessels.",
+        "short_description": "Red or purple marks from blood vessels.",
+        "detailed_description": "Vascular lesions are red or purple marks caused by abnormal blood vessels.",
         "can_be_solved_with_product": "yes",
         "url": "https://www.amazon.com/Verseo-Vein-Eraser-Spider-Concealer/dp/B0CCJXMB47",
         "asset": "5.png",
@@ -109,9 +116,11 @@ def upload_image():
                 condition_info = skin_conditions[predicted_class]
             else:
                 condition_info = {
-                    "problem_description": "No problem.",
+                    "short_description":"check the medical",
+                    "detailed_description": "No problem.",
                     "recommendation": "Please consult a medical professional if you don't feel well.",
                     "url": "",
+                    "height": 200,
                     "asset": "img.png"
                 }
             
