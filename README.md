@@ -42,7 +42,7 @@ Make sure you have the following installed:
 
 ```bash
 git clone https://github.com/yourusername/SkinGuard-AI.git
-cd SkinGuard-AI
+cd SkinGuard-AI/server
 ```
 
 ### 2. Set up a Virtual Environment (Optional but Recommended)
