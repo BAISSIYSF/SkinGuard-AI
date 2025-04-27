@@ -83,6 +83,12 @@ This will start the server at `http://127.0.0.1:5000/` by default.
 - **Receiving Recommendations**: Once the model processes the image, it will display the predicted skin condition, description, and recommendation.
 - **Product Links**: If the condition is treatable with an over-the-counter product, the system will provide a link to the recommended product.
 
+  **Screen1:** 
+  ![](ex0.png)
+
+  **Screen2:** 
+  ![](ex1.png) 
+
 ### 5. Download the Skin Cancer ISIC Dataset
 
 This project uses a custom-trained **YOLOv11n** model specifically designed for skin condition classification. The model has been trained on the **Skin Cancer ISIC dataset**. You can download the dataset from the following link:
