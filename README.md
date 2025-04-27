@@ -84,10 +84,10 @@ This will start the server at `http://127.0.0.1:5000/` by default.
 - **Product Links**: If the condition is treatable with an over-the-counter product, the system will provide a link to the recommended product.
 
   **Screen1:** 
-  ![](ex0.png)
+  ![](ex0.jpg)
 
   **Screen2:** 
-  ![](ex1.png) 
+  ![](ex1.jpg) 
 
 ### 5. Download the Skin Cancer ISIC Dataset
 
